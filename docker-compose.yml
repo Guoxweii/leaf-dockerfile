@@ -10,6 +10,26 @@ services:
       - TZ=Asia/Shanghai
     command: sleep infinity
 
+  school:
+    build: .
+    environment:
+      - http_proxy=http://192.168.11.114:7890
+      - https_proxy=http://192.168.11.114:7890
+      - all_proxy=socks5://192.168.11.114:7890
+      - LANG=en_US.UTF-8
+      - TZ=Asia/Shanghai
+    command: sleep infinity
+
+  wechat:
+    build: .
+    environment:
+      - http_proxy=http://192.168.11.114:7890
+      - https_proxy=http://192.168.11.114:7890
+      - all_proxy=socks5://192.168.11.114:7890
+      - LANG=en_US.UTF-8
+      - TZ=Asia/Shanghai
+    command: sleep infinity
+
   postgres:
     image: postgres:15
     restart: unless-stopped
